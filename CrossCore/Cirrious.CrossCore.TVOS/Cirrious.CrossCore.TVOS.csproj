@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{06FA79CB-D6CD-4721-BB4B-1BD202089C55};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{37070877-C08B-4AC0-8752-F1E25FFBA6E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Cirrious.CrossCore.TVOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Cirrious.CrossCore.TVOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\Mvx\TVOS\</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchProfiling>true</MtouchProfiling>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\Mvx\TVOS\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.TVOS" />
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\..\bin\Debug\Mvx\Portable\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\TVOS\Xamarin.TVOS.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MvxTouchColorExtensionMethods.cs" />
+    <Compile Include="MvxTouchDateTimeExtensionMethods.cs" />
+    <Compile Include="MvxTouchUIViewControllerExtensions.cs" />
+    <Compile Include="Platform\IMvxTouchSystem.cs" />
+    <Compile Include="Platform\MvxIosMajorVersionChecker.cs" />
+    <Compile Include="Platform\MvxTouchSystem.cs" />
+    <Compile Include="Platform\MvxTouchTask.cs" />
+    <Compile Include="Platform\MvxTouchVersion.cs" />
+    <Compile Include="Views\IMvxEventSourceViewController.cs" />
+    <Compile Include="Views\IMvxTouchModalHost.cs" />
+    <Compile Include="Views\MvxBaseViewControllerAdapter.cs" />
+    <Compile Include="Views\MvxEventSourceCollectionViewController.cs" />
+    <Compile Include="Views\MvxEventSourcePageViewController.cs" />
+    <Compile Include="Views\MvxEventSourceTabBarController.cs" />
+    <Compile Include="Views\MvxEventSourceTableViewController.cs" />
+    <Compile Include="Views\MvxEventSourceViewController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Platform\" />
+  </ItemGroup>
+</Project>
